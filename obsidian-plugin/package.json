@@ -1,0 +1,19 @@
+{
+  "name": "obsidian-blog-sync",
+  "version": "0.1.0",
+  "description": "Sync selected Obsidian notes into a date-named markdown blog repo.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": ["obsidian", "blog"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.20.0",
+    "obsidian": "^1.4.11",
+    "typescript": "^5.3.0"
+  }
+}

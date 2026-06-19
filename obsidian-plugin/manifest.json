@@ -1,0 +1,9 @@
+{
+  "id": "blog-sync",
+  "name": "Blog Sync",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Copy the selected note into a local blog repo's posts/ folder and optionally git commit & push to deploy it.",
+  "author": "Siyang Shao",
+  "isDesktopOnly": true
+}

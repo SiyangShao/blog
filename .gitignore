@@ -1,0 +1,9 @@
+# Generated site output
+_site/
+
+# Obsidian plugin build artifacts
+obsidian-plugin/node_modules/
+obsidian-plugin/main.js
+
+# macOS
+.DS_Store

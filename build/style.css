@@ -1,0 +1,77 @@
+:root {
+  --bg: #fffefb;
+  --fg: #1f1f1f;
+  --muted: #8a8a8a;
+  --rule: #ececec;
+  --link: #335c81;
+  --max: 680px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16161a;
+    --fg: #e6e6e6;
+    --muted: #7d7d85;
+    --rule: #2a2a30;
+    --link: #8fb4d8;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+}
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 4rem 1.25rem 6rem;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Index --- */
+.site-title { font-size: 1.7rem; font-weight: 700; margin: 0 0 2.5rem; letter-spacing: -0.01em; }
+.year { font-size: 1.25rem; margin: 2.5rem 0 0.25rem; }
+.month {
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600; margin: 1.5rem 0 0.5rem;
+}
+ul.entries { list-style: none; margin: 0 0 0.5rem; padding: 0; }
+ul.entries li { margin: 0.15rem 0; }
+ul.entries a { display: inline-block; padding: 0.1rem 0; }
+
+/* --- Post --- */
+.post-title { font-size: 1.5rem; margin: 0 0 1.5rem; letter-spacing: -0.01em; }
+article { margin-top: 1rem; }
+article p { margin: 0 0 1.2rem; }
+article h1, article h2, article h3 { line-height: 1.3; margin: 2rem 0 0.8rem; }
+article img { max-width: 100%; height: auto; }
+article pre {
+  overflow-x: auto; padding: 1rem; font-size: 0.9em;
+  background: rgba(127, 127, 127, 0.08); border-radius: 6px;
+}
+article code {
+  background: rgba(127, 127, 127, 0.12); padding: 0.1em 0.35em;
+  border-radius: 4px; font-size: 0.9em;
+}
+article pre code { background: none; padding: 0; }
+article blockquote {
+  margin: 0 0 1.2rem; padding-left: 1rem;
+  border-left: 3px solid var(--rule); color: var(--muted);
+}
+article hr { border: none; border-top: 1px solid var(--rule); margin: 2rem 0; }
+
+/* --- Navigation --- */
+.post-nav { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.85rem; }
+.post-nav.top { margin-bottom: 2rem; }
+.post-nav.bottom {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--rule); color: var(--muted);
+}
+.post-nav.bottom a { color: var(--muted); }
+.post-nav.bottom a:hover { color: var(--link); }
