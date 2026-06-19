@@ -137,7 +137,13 @@ export default class BlogSyncPlugin extends Plugin {
 
   /** Returns true if a commit was actually pushed, false if nothing changed. */
   async commitAndPush(repo: string, names: string[]): Promise<boolean> {
-    const opts = { cwd: repo };
+    // Obsidian (a GUI app) often has a minimal PATH that lacks Homebrew, so git
+    // can't find gpg/pinentry and signing fails. Prepend the common bin dirs.
+    const env = {
+      ...process.env,
+      PATH: `/opt/homebrew/bin:/usr/local/bin:${process.env.PATH ?? ""}`,
+    };
+    const opts = { cwd: repo, env };
     const sub = this.settings.postsSubdir;
     const subject =
       names.length === 1 ? names[0] : `${names.length} entries`;
